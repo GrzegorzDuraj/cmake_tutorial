@@ -22,7 +22,7 @@ include_directories("${PROJECT_BINARY_DIR}")
 option(USE_CLANG "build application with clang" ON)#OFF is the default
 option(USE_MYMATH "Use tutorial provided math implementations" ON)
 
-#add th MathFunctions library?
+#add the MathFunctions library?
 if (USE_MYMATH)
 	include_directories("${PROJECT_BINARY_DIR}/MathFunctions")
 	add_subdirectory(MathFunctions)
@@ -43,5 +43,9 @@ target_link_libraries (Tutorial ${EXTRA_LIBS})
 #add the install targets
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION include)
+
+
+install (FILES "${PROJECT_BINARY_DIR}/MathFunctions.h" DESTINATION include)
+#install (FILES "${PROJECT_SOURCE_DIR}/MathFunctions.h" DESTINATION include)
 #install (FILES "${PROJECT_BINARY_DIR}/tutorial.cxx" DESTINATION include)
 #install (FILES "${PROJECT_BINARY_DIR}/tutorial.cxx" DESTINATION include)
