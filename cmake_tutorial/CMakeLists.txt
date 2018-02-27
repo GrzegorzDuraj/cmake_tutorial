@@ -13,7 +13,7 @@ configure_file(
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h 
 include_directories("${PROJECT_BINARY_DIR}/MathFunctions")
-add_subdirectory(MathFunctions)
+#add_subdirectory(MathFunctions)
 
 
 
@@ -31,6 +31,7 @@ endif (USE_MYMATH)
 
 
 
+
 #add_executable
 add_executable(Tutorial tutorial.cxx)
 target_link_libraries (Tutorial ${EXTRA_LIBS})
@@ -38,3 +39,6 @@ target_link_libraries (Tutorial ${EXTRA_LIBS})
 
 
 
+#add the install targets
+install (TARGETS Tutorial DESTINATION bin)
+install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION include)
