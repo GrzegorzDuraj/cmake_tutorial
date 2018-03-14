@@ -1,6 +1,8 @@
 *exe
 CMakeCache.txt
 CMakeFiles/
+bin/
+bin_*/
 CMakeScripts
 Testing
 Makefile

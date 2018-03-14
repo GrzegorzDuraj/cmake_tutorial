@@ -1,0 +1,10 @@
+# PATH => /bin:/opt/a dir/bin:/sbin
+WORK=:$PATH:
+# WORK => :/bin:/opt/a dir/bin:/sbin:
+REMOVE='/c/STM32_Toolchain/Coreutils/bin/'
+WORK=${WORK/:$REMOVE:/:}
+# WORK => :/bin:/sbin:
+WORK=${WORK%:}
+WORK=${WORK#:}
+PATH=$WORK
+# PATH => /bin:/sbin
